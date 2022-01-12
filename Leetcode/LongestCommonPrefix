@@ -1,0 +1,14 @@
+
+class Solution:
+    def longestCommonPrefix(self, strs: List[str]) -> str:
+        s1 = ""
+        for i in range(len(min(strs))):
+            current=strs[0][i] ## first, seond, third element of first word.
+            for j in range(1,len(strs)):
+                if(strs[j][i] != current):
+                    return s1
+
+            s1=s1+current
+
+        return s1   
+        
