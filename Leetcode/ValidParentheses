@@ -1,0 +1,14 @@
+class Solution:
+    def isValid(self,s:str)->bool:
+        L=[]   
+        openb='([{'
+        close=')]}'              
+        for i in s:
+            if i in openb:
+                L.append(i)
+            elif i in close:
+                if len(L)==0:
+                    return False
+                if close.index(i)!=openb.index(L.pop()):
+                    return False
+        return not L
