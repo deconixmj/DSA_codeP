@@ -1,0 +1,20 @@
+# Split a String in Balanced Strings
+
+class Solution:
+    def balancedStringSplit(self, s: str) -> int:
+           
+        left=[]
+        right=[]
+        count=0
+        for i in s:
+            if i=='R':
+                left.append(i)
+            if i=='L':
+                right.append(i)
+
+            if len(left)==len(right):
+                count+=1
+
+         
+
+        return count
